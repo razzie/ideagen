@@ -1,0 +1,4 @@
+# github.com/gertd/go-pluralize v0.1.1
+github.com/gertd/go-pluralize
+# github.com/jteeuwen/go-bindata v3.0.7+incompatible
+github.com/jteeuwen/go-bindata
