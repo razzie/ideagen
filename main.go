@@ -1,5 +1,7 @@
 package main
 
+//go:generate go run ./tools/go-bindata/ -prefix data data/...
+
 import (
 	"fmt"
 )
