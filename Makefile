@@ -1,5 +1,5 @@
-build: bindata.go
+build:
 	go generate
-	go build
+	go build -mod=vendor
 
 .PHONY: build
