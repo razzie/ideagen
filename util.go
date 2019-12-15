@@ -25,6 +25,13 @@ func contains(list []string, value string) bool {
 	return false
 }
 
+func conditional(condition bool, condTrue, condFalse float32) float32 {
+	if condition {
+		return condTrue
+	}
+	return condFalse
+}
+
 func resolveOptions(text string) string {
 	if strings.Contains(text, "[") {
 		options := getTextBetweenTags(text, "[", "]")
