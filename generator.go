@@ -29,7 +29,9 @@ func NewGenerator() *Generator {
 // Generate ...
 func (gen *Generator) Generate() string {
 	gen.reset()
-	return gen.fillInTemplate(gen.pickRandom("template"))
+	template := gen.pickRandom("template")
+	result := gen.fillInTemplate(template)
+	return formatOutput(result)
 }
 
 func (gen *Generator) reset() {
@@ -134,7 +136,7 @@ func (gen *Generator) generateCharacter(parameters []string) string {
 	preDesc := gen.pickRandomOrNone("character_description", 0.6)
 
 	postDescChance := conditional(allowPostDesc, conditional(len(preDesc) > 0, 0.25, 0.8), 0)
-	gen.characterPostDescription = gen.pickRandomOrNone("character_description_pos", postDescChance)
+	gen.characterPostDescription = gen.pickRandomOrNone("character_description_post", postDescChance)
 
 	if isPlayer {
 		gen.characterIsGroup = makeGroup
