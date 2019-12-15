@@ -3,6 +3,8 @@ package main
 import (
 	"math/rand"
 	"strings"
+
+	"github.com/razzie/ideagen/internal"
 )
 
 // Generator ...
@@ -16,8 +18,8 @@ type Generator struct {
 // NewGenerator returns a new generator
 func NewGenerator() *Generator {
 	data := make(map[string][]string)
-	for _, name := range AssetNames() {
-		bytes, _ := Asset(name)
+	for _, name := range internal.AssetNames() {
+		bytes, _ := internal.Asset(name)
 		data[name] = strings.Split(string(bytes), "\n")
 	}
 
